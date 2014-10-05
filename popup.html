@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html lang="ja" ng-app="Lgtmer" ng-csp>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/angular-csp.css" type="text/css" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+<body>
+
+    <div ng-controller="SearchHistoryController">
+      <form ng-submit="searchBy(word)">
+        <input type="text" ng-model="word" placeholder="Enter a search word here">
+        <input type="submit" value="search">
+      </form>
+      <div class="copied-element sample-show-hide" ng-show="copied" style="clear:both;">
+        copied!!
+      </div>
+      <hr />
+      <div>
+        <ul>
+          <li ng-repeat="lgtm in lgtms">
+            <img src="{{lgtm}}" ng-click="copyToClipBoard(lgtm)" />
+          </li>
+        </ul>
+      </div>
+    </div>
+</body>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/popup.js"></script>
+
+</html>
